@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Mux — LLM Gateway</title>
+<title>Mux: LLM Gateway</title>
 <style>
   * { box-sizing: border-box; }
   body {
@@ -98,7 +98,6 @@
 </head>
 <body>
   <div class="card">
-    <span class="badge">API online</span>
     <h1>Mux</h1>
     <p class="tagline">
       A multi-provider LLM gateway with automatic failover, semantic response caching,
@@ -108,7 +107,7 @@
     <ul class="features">
       <li>OpenAI-compatible <code>/v1/chat/completions</code> endpoint</li>
       <li>Automatic failover: Groq → Gemini on any provider error</li>
-      <li>Semantic caching with local embeddings — similar prompts skip the LLM call entirely</li>
+      <li>Semantic caching with local embeddings: similar prompts skip the LLM call entirely</li>
       <li>Per-key auth, token-bucket rate limiting, and usage metering via <code>/stats</code></li>
     </ul>
 
@@ -117,7 +116,6 @@
       <a class="secondary" href="https://github.com/Shivikagarg999/-MUX-LLM-gateway-platform">GitHub</a>
     </div>
 
-    <div class="stack">FastAPI · httpx · sentence-transformers · SQLite · Groq · Gemini</div>
   </div>
 </body>
 </html>
