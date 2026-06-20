@@ -1,8 +1,10 @@
 from contextlib import asynccontextmanager
+from pathlib import Path
 
 import httpx
 from dotenv import load_dotenv
 from fastapi import Depends, FastAPI, HTTPException
+from fastapi.responses import FileResponse
 
 from app import cache, router
 from app.auth import verify_api_key
@@ -12,6 +14,8 @@ from app.models import ChatCompletionRequest
 from app.rate_limit import check_rate_limit
 
 load_dotenv()
+
+STATIC_DIR = Path(__file__).resolve().parent / "static"
 
 
 @asynccontextmanager
@@ -25,7 +29,7 @@ app = FastAPI(title="Mux", description="A multi-provider LLM gateway", lifespan=
 
 @app.get("/")
 def root():
-    return {"service": "mux", "status": "ok"}
+    return FileResponse(STATIC_DIR / "index.html")
 
 
 @app.get("/stats")
