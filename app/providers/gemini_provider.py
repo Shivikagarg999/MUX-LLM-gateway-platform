@@ -3,11 +3,7 @@ import os
 import httpx
 
 GEMINI_BASE_URL = "https://generativelanguage.googleapis.com/v1beta/openai"
-
-# The client's requested model is almost always a Groq model name.
-# When we fall back to Gemini, we swap it for one of Gemini's own models
-# so the fallback always works regardless of what the client originally asked for.
-DEFAULT_MODEL = "gemini-2.0-flash"
+DEFAULT_MODEL = "gemini-2.5-flash"
 
 
 async def complete(payload: dict) -> dict:
